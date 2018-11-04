@@ -25,7 +25,7 @@ SECRET_KEY = 'hd5-+atne7*rjuy@4-b7*^%60pl=6-v#@^$xv4dp3f4v*2$_(p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', ' . andual.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'andual.pythonanywhere.com']
 
 
 # Application definition
