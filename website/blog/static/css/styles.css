@@ -1,12 +1,15 @@
 body {
   background-image: url("grungebg.jpg");
+  background-size: 100% 100%;
   color: #d6d6d6;
   margin: 0;
-  padding: 5px;
+  padding: 0px;
   width: 100%;
   height: 100%;
   font-family: "Playfair Display", serif;
   overflow-x: hidden;
+  min-height:100%; 
+    position:relative; 
 }
 p {
   hyphens: auto;
@@ -28,33 +31,33 @@ ul {
   text-align: center;
 }
 /*------Main Content-------*/
-.content {
+main {
   display: grid;
   grid-template-columns: 20vw 70vw 1vw;
   grid-gap: 4vh 4vw;
 }
-main {
+article {
   margin-top: 13vh;
 }
-article {
+section {
 }
 h2 {
   font-family: "Tangerine", cursive;
   text-align: justify;
 }
-article img {
+section img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 70vw;
 }
-article p {
+section p {
   width: 66vw;
   text-align: justify;
   margin-left: auto;
   margin-right: auto;
 }
-article a {
+section a {
   text-decoration: none;
   display: inline-block;
   color: #c3c3c3;
@@ -113,3 +116,20 @@ article .button{
 }
 
 /*footer*/
+footer{
+  display: flex;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 1%,rgba(0,0,0,0) 2%,#646464 100%);
+  width:auto ;
+  height: 80px;
+position: absolute; 
+    left: 0 ; 
+    right: 0; 
+    bottom: 0; 
+justify-content: space-between;
+align-items: center;
+padding: 0 20px;
+}
+footer a img{
+
+  width: 40px;
+}

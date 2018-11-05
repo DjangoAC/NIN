@@ -4,7 +4,7 @@
 {% for post in posts %}
 <article>
             <h2> <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h2>
-            <img src="https://bloximages.chicago2.vip.townnews.com/nwitimes.com/content/tncms/assets/v3/editorial/b/d8/bd8b1d6c-cae5-5c62-8eda-d560c11115e2/5b631955f248f.image.jpg" alt="article 1" />
+            <img src={{ post.picture }} />
         <p>{{ post.text|linebreaksbr }}</p>
         <a>#tags #tag2 </a>
         <a rel="#" href="{% url 'post_detail' pk=post.pk %}" class="more"><button type="" class="button">Read More...</button></a>
