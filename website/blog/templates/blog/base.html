@@ -10,9 +10,9 @@
     </script>
 </head>
 <body>
-    <div class="content">
+    <main>
     <aside>
-    <header>
+    <nav>
         <a href="{% url 'post_list' %}"><img src="{% static 'images/logo.png' %}"  alt="logo"></a>
             <ul>
                 {% if user.is_authenticated %}
@@ -30,17 +30,19 @@
             </li><br>
             {% endif %}
         </ul>
-    </header>
+    </nav>
     </aside>
-    <main>
+    <article>
+    <section>
         <a href="{% url 'post_new' %}"><span>New Post</span></a>
             <a href="{% url 'post_draft_list' %}"><span>Edit</span></a>
         {% block content %}
             {% endblock %}
-    </main>
-</div>
+    </section>
+    </article>
+</main>
 <footer>
-    <p>Copyright Andual and Gracrys 2018 </p>
+    <p>© Andual and Gracrys 2018 </p>
     <a><img src="{% static 'images/github-logo.png' %}" alt="placeholder+image"></a>
 </footer>
 </body>
