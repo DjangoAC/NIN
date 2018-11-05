@@ -15,12 +15,16 @@ p {
   hyphens: auto;
 }
 /* --------Header nav ---------*/
-header {
+nav {
   margin-top: 2vh;
   position: fixed;
   padding-left: 1vw;
+  
 }
-header img {
+/*aside{
+background-color: black;
+}*/
+ nav img {
   width: 20vw;
 }
 ul {
@@ -128,6 +132,7 @@ position: absolute;
 justify-content: space-between;
 align-items: center;
 padding: 0 20px;
+z-index: 4;
 }
 footer a img{
 
