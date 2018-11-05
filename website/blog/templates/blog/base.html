@@ -2,27 +2,53 @@
 <html>
 {% load static %}
 <head>
-    <title>My blog</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <title>NIN BLOG</title>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Tangerine" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" >
+    </script>
 </head>
 <body>
+    <div class="content">
+    <aside>
+    <header>
+        <img src="{% static 'images/logo.png' %}" alt="logo">
+            <ul>
+
+                <li><a href="{% url 'login' %}">Login </a>
+            </li><br>
+                <li><a>Register </a>
+            </li><br>
+                <li><a>About us </a>
+            </li><br>
+            <li>
+                <form>
+                    <input type="text" placeholder="Username"><br><br>
+                    <input type="text" placeholder="Password"><br><br>
+                    <input type="submit" class="button" value="Submit">
+                    </form>
+            </li>
+        </ul>
+    </header>
+    </aside>
+    <main>
+        {% block content %}
+            {% endblock %}
+    </main>
+</div>
     <div class="page-header">
         {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-            <p class="top-menu">Hello {{ user.username }} <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span></a></p>
+            <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
         {% else %}
             <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span>Log in</a>
         {% endif %}
-        <h1><a href="/">Blog</a></h1>
     </div>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
             </div>
         </div>
     </div>
