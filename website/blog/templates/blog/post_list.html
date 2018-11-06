@@ -2,17 +2,18 @@
 
 {% block content %}
 {% for post in posts %}
-<article>
+
+    <section>
             <h2> <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h2>
-            <img src={{ post.picture }} />
-        <p>{{ post.text|linebreaksbr }}</p>
+            <img src="{{ post.picture }}">
+        <p>{{ post.text|truncatewords:"50"|linebreaksbr }}</p>
         <a>#tags #tag2 </a>
         <a rel="#" href="{% url 'post_detail' pk=post.pk %}" class="more"><button type="" class="button">Read More...</button></a>
         <br>
         <hr>
          {{ post.published_date }}
-        </article>
-    
+</section>
+
         
             
             <!--a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a-->

@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="post">
+    <!--div class="post">
         {% if post.published_date %}
             <div class="date">
                 {{ post.published_date }}
@@ -15,10 +15,21 @@
                 <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
 
                 <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span>Delete</a>
-        {% endif %}
+        {% endif %}>
+
         <h1>{{ post.title }}</h1>
+        <img src="{{ post.picture }}">
         <p>{{ post.text|linebreaksbr }}</p>
-    </div>
+    </div-->
+     <section>
+            <h2> <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h2>
+            <img src="{{ post.picture }}">
+        <p>{{ post.text|linebreaksbr }}</p>
+        <a>#tags #tag2 </a>
+        <br>
+        <hr>
+         {{ post.published_date }}
+</section>
     <hr>
     <a class="btn btn-default" href="{% url 'add_comment' pk=post.pk %}">Add comment</a>
     {% for comment in post.comments.all %}
