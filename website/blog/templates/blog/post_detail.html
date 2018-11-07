@@ -30,7 +30,25 @@
         <hr>
          {{ post.published_date }}
 </section>
-    <hr>
+<section id="comments-container"> 
+    
+   <label> <p>Responses </p></label>
+        
+   <textarea id="text">
+    
+   </textarea><button class="button" value="Submit" id="submit" >send
+</button> 
+<form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>              
+   
+    
+  </section>
+  <section>
+    <fieldset>
+                <p class="render">No, because, no.</p><hr>
+    </fieldset><br>
+  </section>
     <a class="btn btn-default" href="{% url 'add_comment' pk=post.pk %}">Add comment</a>
     {% for comment in post.comments.all %}
         {% if user.is_authenticated or comment.approved_comment %}
