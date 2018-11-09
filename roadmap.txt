@@ -1,8 +1,0 @@
-Hacer una version decente del blog con fronted
-eliminar el codigo que no sirva momentaneamente
-Hacer libreria de piedra papel o tijera desde 0 sin compiarme
-intentar numpy
-añadir imagenes a los post
-añadir fotos a los comentarios
-añadir registro
-añadir busqueda
